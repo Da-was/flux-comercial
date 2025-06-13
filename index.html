@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flux ID - Gestão Inteligente para Cooperativas Agrícolas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#21c772',
+                        'primary-dark': '#1a9d5a',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #21c772 0%, rgba(33, 199, 114, 0.1) 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(33, 199, 114, 0.2);
+        }
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: #21c772;
+            border-color: #21c772;
+        }
+        .checkbox-container .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 6px;
+            top: 2px;
+            width: 4px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold text-xl mr-3">FI</div>
+                <span class="text-2xl font-bold text-primary">Flux<span class="text-gray-700">ID</span></span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="font-medium hover:text-primary transition">Funcionalidades</a>
+                <a href="#pricing" class="font-medium hover:text-primary transition">Planos</a>
+                <a href="#testimonials" class="font-medium hover:text-primary transition">Depoimentos</a>
+                <a href="#contact" class="font-medium hover:text-primary transition">Contato</a>
+            </nav>
+            <div class="hidden md:block">
+                <a href="#pricing" class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-medium transition shadow-md">Experimente Grátis</a>
+            </div>
+            <button class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Gestão inteligente para suas <span class="text-primary">cooperativas agrícolas</span></h1>
+                    <p class="text-xl mb-8 text-gray-700">O software completo que simplifica a administração, aumenta a produtividade e fortalece a relação com seus cooperados.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#pricing" class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-medium text-lg transition shadow-lg text-center">Começar agora</a>
+                        <a href="#features" class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-medium text-lg transition shadow-lg text-center">Conhecer funcionalidades</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Agricultor usando tecnologia" class="rounded-xl shadow-2xl max-w-md w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tudo que sua cooperativa precisa em um só lugar</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Nossa plataforma integrada oferece as melhores soluções para gestão agrícola cooperativista.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="fas fa-boxes text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Controle de Estoque</h3>
+                    <p class="text-gray-600 mb-4">Gestão completa do estoque de insumos e produtos, com alertas de reposição, validade e rastreabilidade.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">R$ 299/mês</span>
+                        <button class="text-primary hover:text-primary-dark font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="fas fa-calculator text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Controle Financeiro</h3>
+                    <p class="text-gray-600 mb-4">Fluxo de caixa, contas a pagar e receber, conciliação bancária e relatórios financeiros personalizados.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">R$ 399/mês</span>
+                        <button class="text-primary hover:text-primary-dark font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Acompanhamento da Produção</h3>
+                    <p class="text-gray-600 mb-4">Monitoramento em tempo real da produção dos cooperados, com indicadores de produtividade e qualidade.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">R$ 499/mês</span>
+                        <button class="text-primary hover:text-primary-dark font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="fas fa-store text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Oferta de Produtos</h3>
+                    <p class="text-gray-600 mb-4">Plataforma para divulgação e comercialização dos produtos dos cooperados com integração ao mercado.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">R$ 349/mês</span>
+                        <button class="text-primary hover:text-primary-dark font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-xl p-8 shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="fas fa-file-invoice text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Emissão de Nota Fiscal</h3>
+                    <p class="text-gray-600 mb-4">Emissão automatizada de notas fiscais eletrônicas com integração aos sistemas governamentais.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">R$ 249/mês</span>
+                        <button class="text-primary hover:text-primary-dark font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-xl p-8 shadow-md feature-card transition duration-300">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center text-primary mb-6">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">CRM Cooperativista</h3>
+                    <p class="text-gray-600 mb-4">Gestão de relacionamento com cooperados, clientes e fornecedores com automação de comunicação.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-primary font-bold">R$ 449/mês</span>
+                        <button class="text-primary hover:text-primary-dark font-medium">Saiba mais →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Calculator Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Monte o plano ideal para sua cooperativa</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Escolha apenas as funcionalidades que você precisa e pague proporcionalmente.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md sticky top-24">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Selecione suas funcionalidades</h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Feature 1 Checkbox -->
+                            <div class="checkbox-container flex items-center">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="hidden" data-price="299">
+                                    <span class="checkmark w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0 relative"></span>
+                                    <div>
+                                        <h4 class="font-bold">Controle de Estoque</h4>
+                                        <p class="text-sm text-gray-600">Gestão completa do estoque com alertas</p>
+                                    </div>
+                                </label>
+                                <span class="ml-auto font-bold text-primary">R$ 299/mês</span>
+                            </div>
+                            
+                            <!-- Feature 2 Checkbox -->
+                            <div class="checkbox-container flex items-center">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="hidden" data-price="399">
+                                    <span class="checkmark w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0 relative"></span>
+                                    <div>
+                                        <h4 class="font-bold">Controle Financeiro</h4>
+                                        <p class="text-sm text-gray-600">Fluxo de caixa e relatórios financeiros</p>
+                                    </div>
+                                </label>
+                                <span class="ml-auto font-bold text-primary">R$ 399/mês</span>
+                            </div>
+                            
+                            <!-- Feature 3 Checkbox -->
+                            <div class="checkbox-container flex items-center">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="hidden" data-price="499">
+                                    <span class="checkmark w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0 relative"></span>
+                                    <div>
+                                        <h4 class="font-bold">Acompanhamento da Produção</h4>
+                                        <p class="text-sm text-gray-600">Monitoramento da produção dos cooperados</p>
+                                    </div>
+                                </label>
+                                <span class="ml-auto font-bold text-primary">R$ 499/mês</span>
+                            </div>
+                            
+                            <!-- Feature 4 Checkbox -->
+                            <div class="checkbox-container flex items-center">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="hidden" data-price="349">
+                                    <span class="checkmark w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0 relative"></span>
+                                    <div>
+                                        <h4 class="font-bold">Oferta de Produtos</h4>
+                                        <p class="text-sm text-gray-600">Plataforma de comercialização</p>
+                                    </div>
+                                </label>
+                                <span class="ml-auto font-bold text-primary">R$ 349/mês</span>
+                            </div>
+                            
+                            <!-- Feature 5 Checkbox -->
+                            <div class="checkbox-container flex items-center">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="hidden" data-price="249">
+                                    <span class="checkmark w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0 relative"></span>
+                                    <div>
+                                        <h4 class="font-bold">Emissão de Nota Fiscal</h4>
+                                        <p class="text-sm text-gray-600">NF-e automatizada integrada</p>
+                                    </div>
+                                </label>
+                                <span class="ml-auto font-bold text-primary">R$ 249/mês</span>
+                            </div>
+                            
+                            <!-- Feature 6 Checkbox -->
+                            <div class="checkbox-container flex items-center">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="checkbox" class="hidden" data-price="449">
+                                    <span class="checkmark w-5 h-5 border-2 border-gray-300 rounded mr-3 flex-shrink-0 relative"></span>
+                                    <div>
+                                        <h4 class="font-bold">CRM Cooperativista</h4>
+                                        <p class="text-sm text-gray-600">Gestão de relacionamento</p>
+                                    </div>
+                                </label>
+                                <span class="ml-auto font-bold text-primary">R$ 449/mês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gradient-to-br from-primary to-primary-dark rounded-xl p-8 text-white shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Resumo do seu plano</h3>
+                        
+                        <div class="mb-8">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Valor base</span>
+                                <span class="font-bold">R$ 199/mês</span>
+                            </div>
+                            <div id="selected-features" class="mb-4">
+                                <!-- Features will be added here by JavaScript -->
+                            </div>
+                            <div class="border-t border-white border-opacity-30 pt-4 mt-4">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-medium">Total mensal</span>
+                                    <span id="total-price" class="text-2xl font-bold">R$ 199/mês</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 rounded-lg p-4 mb-8">
+                            <h4 class="font-bold mb-2">Benefícios incluídos:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2 text-sm"></i>
+                                    <span>Suporte técnico 24/7</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2 text-sm"></i>
+                                    <span>Atualizações automáticas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2 text-sm"></i>
+                                    <span>Backup diário dos dados</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check mt-1 mr-2 text-sm"></i>
+                                    <span>Treinamento online</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-1 font-medium">Nome completo</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-1 font-medium">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70" placeholder="seu@email.com">
+                            </div>
+                            <div>
+                                <label for="phone" class="block mb-1 font-medium">Telefone</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70" placeholder="(00) 00000-0000">
+                            </div>
+                            <div>
+                                <label for="cooperative" class="block mb-1 font-medium">Nome da Cooperativa</label>
+                                <input type="text" id="cooperative" class="w-full px-4 py-2 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white placeholder-white placeholder-opacity-70" placeholder="Nome da sua cooperativa">
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-white text-primary hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg mt-6">
+                                Solicitar demonstração gratuita
+                            </button>
+                        </form>
+                        
+                        <p class="text-center text-white text-opacity-80 mt-4 text-sm">
+                            Teste por 15 dias sem compromisso. Sem necessidade de cartão de crédito.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Cooperativas que confiam na Flux ID</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Veja o que nossos clientes têm a dizer sobre nossa plataforma.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Carlos Mendes</h4>
+                            <p class="text-sm text-gray-600">Cooperativa Agrícola do Vale</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"A Flux ID revolucionou nossa gestão. O controle de estoque integrado com a produção dos cooperados nos permitiu reduzir perdas em 35% no primeiro semestre."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ana Lúcia Silva</h4>
+                            <p class="text-sm text-gray-600">Coopervales Frutas</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"A plataforma de oferta de produtos aumentou nossas vendas em 42% ao conectar nossos cooperados diretamente com grandes compradores. O suporte é excepcional!"</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-md">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Roberto Almeida</h4>
+                            <p class="text-sm text-gray-600">Cooperativa dos Produtores de Grãos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Finalmente uma solução feita pensando nas necessidades reais das cooperativas. O módulo financeiro nos deu total controle e transparência na gestão dos recursos."</p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-primary font-bold hover:text-primary-dark">
+                    Ver mais depoimentos
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Fale com nossa equipe</h2>
+                    <p class="text-xl text-gray-600 mb-8">Tire suas dúvidas, solicite uma demonstração ou conheça nossos planos especiais para grandes cooperativas.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Telefone</h4>
+                                <p class="text-gray-600">(00) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">E-mail</h4>
+                                <p class="text-gray-600">contato@fluxid.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary mr-4 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Endereço</h4>
+                                <p class="text-gray-600">Av. das Cooperativas, 1234 - Sala 501<br>Centro - São Paulo/SP</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary hover:bg-opacity-20 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary hover:bg-opacity-20 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary hover:bg-opacity-20 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-primary bg-opacity-10 flex items-center justify-center text-primary hover:bg-opacity-20 transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-8 shadow-md">
+                        <h3 class="text-2xl font-bold mb-6">Envie sua mensagem</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="contact-name" class="block mb-1 font-medium">Nome completo</label>
+                                <input type="text" id="contact-name" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block mb-1 font-medium">E-mail</label>
+                                <input type="email" id="contact-email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="seu@email.com">
+                            </div>
+                            <div>
+                                <label for="contact-phone" class="block mb-1 font-medium">Telefone</label>
+                                <input type="tel" id="contact-phone" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="(00) 00000-0000">
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block mb-1 font-medium">Assunto</label>
+                                <select id="contact-subject" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="demo">Agendar demonstração</option>
+                                    <option value="planos">Informações sobre planos</option>
+                                    <option value="suporte">Suporte técnico</option>
+                                    <option value="parceria">Parcerias comerciais</option>
+                                    <option value="outro">Outro assunto</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block mb-1 font-medium">Mensagem</label>
+                                <textarea id="contact-message" rows="4" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Escreva sua mensagem aqui..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md mt-4">
+                                Enviar mensagem
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Perguntas frequentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tire suas dúvidas sobre a Flux ID e nossa plataforma.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left">
+                        <h3 class="font-bold text-lg">Como funciona o período de teste gratuito?</h3>
+                        <i class="fas fa-chevron-down text-primary ml-4 transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-3 hidden">
+                        <p class="text-gray-600">Oferecemos 15 dias de uso completo da plataforma sem custo algum. Durante este período, você terá acesso a todas as funcionalidades que selecionar, com suporte completo de nossa equipe. Não é necessário fornecer dados de cartão de crédito para iniciar o teste.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left">
+                        <h3 class="font-bold text-lg">A Flux ID é compatível com outros sistemas que já utilizamos?</h3>
+                        <i class="fas fa-chevron-down text-primary ml-4 transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-3 hidden">
+                        <p class="text-gray-600">Nossa plataforma possui APIs abertas para integração com os principais sistemas de gestão agrícola, ERPs e bancos. Nossa equipe técnica pode auxiliar no processo de migração e integração dos dados existentes para a Flux ID.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left">
+                        <h3 class="font-bold text-lg">Como é calculado o preço final da assinatura?</h3>
+                        <i class="fas fa-chevron-down text-primary ml-4 transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-3 hidden">
+                        <p class="text-gray-600">O valor base é de R$ 199/mês, que inclui a infraestrutura básica e alguns módulos essenciais. Cada funcionalidade adicional selecionada tem seu próprio valor mensal, que é somado ao valor base. Você paga apenas pelo que realmente vai utilizar.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left">
+                        <h3 class="font-bold text-lg">Quais são as opções de pagamento disponíveis?</h3>
+                        <i class="fas fa-chevron-down text-primary ml-4 transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-3 hidden">
+                        <p class="text-gray-600">Aceitamos todas as principais bandeiras de cartão de crédito em até 12x, boleto bancário e transferência. Para cooperativas com mais de 100 associados, oferecemos condições especiais de pagamento - entre em contato com nosso comercial para negociação.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <button class="faq-toggle w-full flex justify-between items-center text-left">
+                        <h3 class="font-bold text-lg">Como é feito o treinamento dos usuários?</h3>
+                        <i class="fas fa-chevron-down text-primary ml-4 transition-transform"></i>
+                    </button>
+                    <div class="faq-content mt-3 hidden">
+                        <p class="text-gray-600">Oferecemos treinamentos online ao vivo com nossa equipe de implementação, além de vídeos tutoriais, manuais completos e um centro de ajuda dentro da própria plataforma. Para cooperativas maiores, podemos agendar treinamentos presenciais sob demanda.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#" class="inline-flex items-center text-primary font-bold hover:text-primary-dark">
+                    Ver todas as perguntas
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar a gestão da sua cooperativa?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Experimente gratuitamente por 15 dias e descubra como a Flux ID pode impulsionar seus resultados.</p>
+            <a href="#pricing" class="inline-block bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg text-lg">
+                Começar agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold text-lg mr-3">FI</div>
+                        <span class="text-xl font-bold text-primary">Flux<span class="text-white">ID</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">A solução completa para gestão de cooperativas agrícolas, desenvolvida por especialistas no setor.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Funcionalidades</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Controle de Estoque</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Gestão Financeira</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Acompanhamento da Produção</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Oferta de Produtos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Emissão de NF-e</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">CRM Cooperativista</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Sobre nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Trabalhe conosco</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cases de sucesso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Parceiros</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Imprensa</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Suporte</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Central de ajuda</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Tutoriais</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Status do sistema</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Política de privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Termos de uso</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">© 2023 Flux ID. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition">Termos de serviço</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition">Política de privacidade</a>
+                    <a href="#" class="text-gray-500 hover:text-white text-sm transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Pricing Calculator Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.checkbox-container input[type="checkbox"]');
+            const selectedFeaturesContainer = document.getElementById('selected-features');
+            const totalPriceElement = document.getElementById('total-price');
+            
+            const featureNames = {
+                '299': 'Controle de Estoque',
+                '399': 'Controle Financeiro',
+                '499': 'Acompanhamento da Produção',
+                '349': 'Oferta de Produtos',
+                '249': 'Emissão de Nota Fiscal',
+                '449': 'CRM Cooperativista'
+            };
+            
+            let basePrice = 199;
+            let selectedFeatures = [];
+            
+            function updatePricing() {
+                selectedFeatures = [];
+                let total = basePrice;
+                
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        const price = parseInt(checkbox.dataset.price);
+                        selectedFeatures.push({
+                            name: featureNames[checkbox.dataset.price],
+                            price: price
+                        });
+                        total += price;
+                    }
+                });
+                
+                // Update selected features list
+                selectedFeaturesContainer.innerHTML = '';
+                selectedFeatures.forEach(feature => {
+                    const featureElement = document.createElement('div');
+                    featureElement.className = 'flex justify-between items-center mb-2';
+                    featureElement.innerHTML = `
+                        <span>${feature.name}</span>
+                        <span class="font-bold">+ R$ ${feature.price}/mês</span>
+                    `;
+                    selectedFeaturesContainer.appendChild(featureElement);
+                });
+                
+                // Update total price
+                totalPriceElement.textContent = `R$ ${total}/mês`;
+            }
+            
+            // Add event listeners to checkboxes
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', updatePricing);
+            });
+            
+            // Initialize pricing
+            updatePricing();
+            
+            // FAQ toggle functionality
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
